@@ -25,7 +25,9 @@ module RenderSuper
 
     # Same as typing in the class
     base.class_eval do
-      alias_method_chain :render, :super
+      #alias_method_chain :render, :super
+      alias_method :render_without_super, :render
+      alias_method :render, :render_with_super
     end
   end
 
